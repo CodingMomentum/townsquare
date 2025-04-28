@@ -6,7 +6,7 @@
   "scripts": {
     "update-submodules": "git -C lib/botc-icons submodule update --init --recursive --remote && git -C lib/botc-icons pull origin main",
     "serve": "npm run update-submodules && vue-cli-service serve",
-    "build": "npm run clone-images && npm run copy-images && vue-cli-service build ./src/main.js",
+    "build": "npm run update-submodules && vue-cli-service build ./src/main.js",
     "lint": "vue-cli-service lint",
     "lint-ci": "vue-cli-service lint --no-fix --max-warnings=0"
   },
