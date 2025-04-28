@@ -4,9 +4,8 @@
   "description": "Blood on the Clocktower Town Square",
   "author": "Steffen Baumgart",
   "scripts": {
-    "clone-images": "npx rimraf ./tmp/botc-icons/ && git clone https://github.com/tomozbot/botc-icons.git --depth 1 ./tmp/botc-icons",
-    "copy-images": "npx copyfiles -u 3 ./tmp/botc-icons/WEBP/**/* ./src/assets/icons/",
-    "serve": "npm run clone-images && npm run copy-images && vue-cli-service serve",
+    "update-submodules": "git -C lib/botc-icons submodule update --init --recursive --remote && git -C lib/botc-icons pull origin main",
+    "serve": "npm run update-submodules && vue-cli-service serve",
     "build": "npm run clone-images && npm run copy-images && vue-cli-service build ./src/main.js",
     "lint": "vue-cli-service lint",
     "lint-ci": "vue-cli-service lint --no-fix --max-warnings=0"
@@ -46,6 +45,6 @@
   "license": "GPL-3.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com//bra1n/townsquare.git"
+    "url": "https://github.com/nicholas-eden/townsquare.git"
   }
 }

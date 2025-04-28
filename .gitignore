@@ -4,4 +4,3 @@ dist
 tmp
 *.pem
 .DS_Store
-src/assets/icons
